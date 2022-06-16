@@ -72,6 +72,9 @@
             {%elif tx.amount > 0 %}        
               <span>{{ tx|tx_amount:filtered_account|rounding:5|intcomma }}</span><br>
               <span class="text-success"> {% coin_symbol %} </span><br>
+            {%elif tx.amount ==  0  and tx.type == 2 and tx.subtype == 0 %}        
+              <span>{{ tx|tx_amount:filtered_account|rounding:5|intcomma }}</span><br>
+              <span class="text-success"> {% coin_symbol %} </span><br>
             {%elif tx.type == 20 or tx.type == 22 %}        
               <span>{{ tx|tx_amount:filtered_account|rounding:5|intcomma }}</span><br>
               <span class="text-success"> {% coin_symbol %} </span><br>
